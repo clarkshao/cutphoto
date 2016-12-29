@@ -12,7 +12,7 @@
         borderWidth: rectY +'px ' + rectX +'px'
         }"></div>
         </div>
-        <div style="right:0;top:0;position: fixed;display: none;">
+        <div style="display: none;">
             <canvas id="canvas_dp" style="z-index: 100; " :height="cutHeight" :width="cutWidth"></canvas>
         </div>
     </div>
