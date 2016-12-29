@@ -20,20 +20,15 @@
 </template>
 
 <script type="text/ecmascript-6">
-
     import Vue from 'vue'
     import VueFinger from '../js/finger2.js'
     import EXIF from '../js/exif.js'
-
 
     Vue.use(VueFinger)
 
     const canvasWidth = document.documentElement.clientWidth
     const canvasHeight = document.documentElement.clientHeight
-
     const isIOS = /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)
-
-    console.log(`canvasWidth:${canvasWidth}`)
 
     function preventDef (ev) {
         ev.preventDefault();
@@ -120,12 +115,11 @@
             return (canvasHeight - this.cutHeight)/2
         }
     },
-        //"ready" when use vue 1.0
+    //"ready" when use vue 1.0
     mounted(){
         (function(){
             document.querySelector('body').addEventListener('touchmove', preventDef)
         })()
-
         var _this = this
         const cutWidth = this.cutWidth, cutHeight = this.cutHeight, image = this.image
         var canvas = document.getElementById('canvas'), context = canvas.getContext('2d')
@@ -133,13 +127,11 @@
         this.context2 = this.canvas2.getContext('2d')
 
         function drawBackgroundImage(){
-
             image.width = this.imageOriginWidth * this.bgscale
             image.height = this.imageOriginHeight * this.bgscale
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillStyle = 'rgba(0, 0, 0,.9)';
             context.fillRect(0,0,canvas.width,canvas.height);
-
             var degree = this.step * 90 * Math.PI / 180;
             switch (this.step) {
                 case 0:
@@ -163,12 +155,8 @@
             }
             this.imageData = context.getImageData(this.rectX, this.rectY, cutWidth, cutHeight);
         }
-
         this.utilFuncs.drawBackgroundImage = drawBackgroundImage.bind(this)
-
         image.src = this.photoOptions.photoToCut;
-
-
         image.crossOrigin = "Anonymous"
         image.onload = function () {
             if(isIOS){
@@ -194,7 +182,6 @@
                 onLoadCallback.call(_this)
             }
         };
-
         function onLoadCallback(){
             var sc = image.width/canvas.width
             image.width = canvas.width
@@ -226,7 +213,6 @@
         document.querySelector('body').removeEventListener('touchmove', preventDef)
     }
 }
-
 </script>
 <style scoped>
     h1{
