@@ -3,6 +3,7 @@
 > cut photo like weixin
 > js模拟微信裁剪头像, 支持移动和缩放图片
 > 利用exif.js解决iphone上图片竖拍的bug(所以可以部分支持旋转)
+> 这只是一个组件, 核心是src/components/CutPhoto.vue文件. 需要使用时请自行定制
 
 ## Demo
 
