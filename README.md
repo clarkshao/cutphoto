@@ -16,7 +16,7 @@ import VueFinger from 'vuefinger'
 ```
  
 ## 使用方法
-  >   需要给组件传入一个对象:photoOptions, 这个对象包括三个属性
+###  需要给组件传入一个对象:photoOptions, 这个对象包括三个属性
   a.    photoToCut: 待裁剪图片的url  (注意, 这里不能引用跨域资源)
   b.    handler: 处理裁剪后得到的**dataURL**数据的回调函数
   c.    ratio: 裁剪矩阵的高/宽
