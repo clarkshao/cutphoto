@@ -7,16 +7,12 @@
  4.    demo是基于vue2.0的, 所以这里的CutPhoto.vue也是基于2.0的. 想要支持1.0, 需要把代码里的mounted改为ready, 然后往下看
  5.    src/js下的finger2.js是基于[vueFinger](https://github.com/Samlin901211/vuefinger), 因为vueFinger暂时不支持vue2.0. 如果想要切换到vue1.0, 请直接使用vueFinger
 
-`` 
-        import VueFinger from '../js/finger2.js'
+``` bash
+import VueFinger from '../js/finger2.js'
+# 改为
+import VueFinger from 'vuefinger'
 
-`` 
-
-改为
-`` 
-        import VueFinger from 'vuefinger'
-
-``
+```
 
 ## Demo
 
